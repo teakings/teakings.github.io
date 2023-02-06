@@ -3,7 +3,7 @@
 }
 body {
   /* background-image: linear-gradient(to right,#4747f7,#ff4141) ; */
-  background-color: #faf5f5  !important;
+  background-image: linear-gradient(to right, #E5E4E2, #ffffff);
   font-family: Helvetica, “Helvetica Neue”, Arial, sans-serif;
 }
 .img {
@@ -54,6 +54,91 @@ box-shadow:  20px 20px 60px #d5d0d0,
   float: left;
   width: 30.33%;
 }
-.rows {
-	width: 100%;
+.card {
+  height: 100px !important;
+}
+.border-left-primary {
+  border-left: 0.25rem solid #4e73df !important;
+}
+.border-left-secondary {
+  border-left: 0.25rem solid #858796 !important;
+}
+.border-left-success {
+  border-left: 0.25rem solid #1cc88a !important;
+}
+.border-left-info {
+  border-left: 0.25rem solid #36b9cc !important;
+}
+.border-left-warning {
+  border-left: 0.25rem solid #f6c23e !important;
+}
+.border-left-danger {
+  border-left: 0.25rem solid #e74a3b !important;
+}
+.border-left-light {
+  border-left: 0.25rem solid #f8f9fc !important;
+}
+.border-left-dark {
+  border-left: 0.25rem solid #5a5c69 !important;
+}
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+.img-profile {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+/* SIDEBAR */
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+  background-image: url(img/bg.jpg)
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+  background-color: #000000;
+}
+.list-group-item, .list-group-item-action, .list-group{
+  background-color: transparent !important;
+  border-color: #fff  !important;
+  color: #fff  !important;
+  }
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: -15rem;
+  }
 }

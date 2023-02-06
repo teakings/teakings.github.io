@@ -42,8 +42,10 @@ async init() {
   }
   else {
     dbJSON.forEach(field => { // separate json
-    // console.log(field.name+" with ID: "+field.id+" logged in");
-    document.querySelector("#user").innerHTML = "Welcome " + field.name;
+    document.querySelector("#user").innerHTML = field.name;
+    document.querySelector("#status").innerHTML = `Account ${field.status}`;
+    document.querySelector("#account").innerHTML = field.account;
+    document.querySelector("#balance").innerHTML = field.balance;
     });
   }
 }
