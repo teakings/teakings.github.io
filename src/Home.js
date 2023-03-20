@@ -1,8 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import dbClass from './classes';
 import logo from './img/logo.png';
-import {Link, useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 const Home = () => {
@@ -20,11 +19,12 @@ const Home = () => {
 
   // LOGIN
   async function login(user) {
+    document.querySelector("#btn").innerHTML="Loading.....";
     let data= {
       type: "view",
       uname: user
     };
-    const response = await fetch("https://teakings.000webhostapp.com/new/index.php", {
+    const response = await fetch("https://tk88.000webhostapp.com/index.php", {
       method: 'post',
       mode: "cors",
       body: JSON.stringify(data)
@@ -32,18 +32,19 @@ const Home = () => {
     const dbJSON = await response.json(); //get json
     if (dbJSON==="0") {
       console.log("null");
+      document.querySelector("#btn").innerHTML="LOGIN";
     }
     else {
-      dbJSON.forEach(field => { // separate json
+      for (let field of dbJSON) { // separate json
       sessionStorage.setItem("username",field.username);
-      });
-      navigate("/Dashboard")
+      };
+      document.querySelector("#btn").innerHTML="LOGIN";
+      navigate("/Dashboard");
     }
   }
   
 
   return (
-    <div className="container">
 
       <div className='container-login100'>
       <div className="wrap-login100">
@@ -63,13 +64,11 @@ const Home = () => {
       
       <div className="d-grid gap-2">
       <button id='btn' className='btn btn-primary rounded-pill fw-bold' onClick={() => login(username)}>LOGIN</button>
-      <button id='btn' className='btn btn-primary rounded-pill' onClick={() => dbClass.all()}>dis</button>
       </div>
       </div>
     </div>
-    <li><Link to={`/Dashboard`}>Your Name</Link></li>
+    
 
-    </div> 
   );
 }
 

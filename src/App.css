@@ -54,7 +54,7 @@ box-shadow:  20px 20px 60px #d5d0d0,
   float: left;
   width: 30.33%;
 }
-.card {
+.card2 {
   height: 100px !important;
 }
 .border-left-primary {
@@ -80,6 +80,22 @@ box-shadow:  20px 20px 60px #d5d0d0,
 }
 .border-left-dark {
   border-left: 0.25rem solid #5a5c69 !important;
+}
+.text-red{
+  color: #f00;
+}
+.text-green{
+  color: #2dd164;
+}
+.text-white {
+  color: #ccc;
+}
+.scroll {
+  max-height: 14rem;
+  overflow-y: auto;
+}
+.card-height {
+ height: 14.5rem !important;
 }
 .col-auto {
   flex: 0 0 auto;
@@ -140,5 +156,12 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
   body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: -15rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .VictoryContainer{
+    user-select: auto !important;
+    pointer-events: auto !important;
+    touch-action: auto !important;
   }
 }
